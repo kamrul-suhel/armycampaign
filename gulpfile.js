@@ -54,13 +54,30 @@ gulp.task('styles', function () {
 });
 
 
+// // Scripts
+// gulp.task('pluginscripts', function () {
+//     console.log('starting plugin scripts task');
+//
+//     return gulp.src([
+//     	'node_modules/phaser/dist/phaser-core.min.js'
+// 	])
+//         .pipe(plumber(function (err) {
+//             console.log('Scripts Task Error');
+//             console.log(err);
+//             this.emit('end');
+//         }))
+//         .pipe(uglify())
+//         .pipe(concat('pluginscripts.js'))
+//         .pipe(gulp.dest(DIST_PATH))
+// });
+
 // Scripts
 gulp.task('pluginscripts', function () {
     console.log('starting plugin scripts task');
 
     return gulp.src([
-    	'node_modules/phaser/dist/phaser-core.min.js'
-	])
+        'src/scripts/plugins/**/*.js'
+    ])
         .pipe(plumber(function (err) {
             console.log('Scripts Task Error');
             console.log(err);
